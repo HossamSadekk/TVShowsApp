@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/episodeContainer"
+        android:background="@color/colorPrimaryDark"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/ubuntu_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="@id/layoutHeader"
+                app:layout_constraintEnd_toStartOf="@id/imageClose"
+                app:layout_constraintTop_toTopOf="@id/layoutHeader"
+                app:layout_constraintBottom_toBottomOf="@id/layoutHeader"
+                />
+
+            <ImageView
+                android:id="@+id/imageClose"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/colorTextPrimary"
+                app:layout_constraintEnd_toEndOf="@id/layoutHeader"
+                app:layout_constraintTop_toTopOf="@id/layoutHeader"
+                app:layout_constraintBottom_toBottomOf="@id/layoutHeader"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/episodesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="690dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@id/episodeContainer"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            app:layout_constraintEnd_toEndOf="@id/episodeContainer"
+            app:layout_constraintBottom_toBottomOf="@id/episodeContainer"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
